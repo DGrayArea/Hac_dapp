@@ -61,7 +61,7 @@ const Lottery = ({ name, admin, contract, token }) => {
 
   const previousWinner = '0xGray...' //truncateEthAddress(prevWinner)
   const bal = parseInt(balance)
-  const price = Math.ceil(ethers.utils.formatEther(parseInt(fee).toString()))
+  const price = 1 // Math.ceil(ethers.utils.formatEther(parseInt(fee).toString()))
   const totalCost = price * quantity
   const userEntries = parseInt(userEntr)
 
