@@ -1,7 +1,8 @@
 import React from 'react'
-import { Image, Navbar, Link, Button } from '@nextui-org/react'
+import { Image, Navbar, Button } from '@nextui-org/react'
 import { useAddress, ConnectWallet } from '@thirdweb-dev/react'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link'
 
  const Nav = (/*{mint, stake, rewards, background}*/) => {
     const address = useAddress()
@@ -54,9 +55,9 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid'
       <ChevronDownIcon className='w-4' />
     </Button>
     <div className="dropdown-content text-white rounded-xl">
-      <a className='text-white a-hover hover:text-white' href="/staking/Hac333">333 Staking</a>
-      <a className='text-white a-hover hover:text-white' href="/staking/Hac3333">3333 Staking</a>
-      <a className='text-white a-hover hover:text-white' href="/staking/HacAliens">Aliens Staking</a>
+      <Link className='text-white a-hover hover:text-white' href="/staking/Hac333">333 Staking</Link>
+      <Link className='text-white a-hover hover:text-white' href="/staking/Hac3333">3333 Staking</Link>
+      <Link className='text-white a-hover hover:text-white' href="/staking/HacAliens">Aliens Staking</Link>
     </div>
               </div>
           </Navbar.Content>
@@ -66,9 +67,9 @@ import { ChevronDownIcon } from '@heroicons/react/24/solid'
       <ChevronDownIcon className='w-4' />
     </Button>
     <div className="dropdown-content text-white rounded-xl">
-      <a className='text-white a-hover hover:text-white' href="/lotteries/Hac333">333 Lottery</a>
-      <a className='text-white a-hover hover:text-white' href="/lotteries/Hac3333">3333 Lottery</a>
-      <a className='text-white a-hover hover:text-white' href="/lotteries/HacAliens">Aliens Lottery</a>
+      <Link className='text-white a-hover hover:text-white' href="/lotteries/Hac333">333 Lottery</Link>
+      <Link className='text-white a-hover hover:text-white' href="/lotteries/Hac3333">3333 Lottery</Link>
+      <Link className='text-white a-hover hover:text-white' href="/lotteries/HacAliens">Aliens Lottery</Link>
     </div>
               </div>
           </Navbar.Content>
