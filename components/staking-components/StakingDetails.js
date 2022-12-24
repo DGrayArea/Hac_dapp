@@ -25,7 +25,7 @@ const StakingDetails = ({ user, vaultId }) => {
   <div className='flex justify-between space-y-3 flex-col md:flex-row md:justify-between p-1 md:space-x-2'>
     <div className='stats mt-3'>
       <h2 className='text-sm'>Total Earned</h2>
-      <p className='text-xl text-yellow-400 font-semibold'>{parseInt(earnedRewards)} HACT</p>
+      <p className='text-xl text-yellow-400 font-semibold'>{0} HACT</p>
     </div>
     <div className='stats'>
       <h2 className='text-sm'>Daily Earning</h2>
