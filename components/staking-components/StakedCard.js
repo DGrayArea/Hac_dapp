@@ -18,10 +18,6 @@ const StakedCard = ({ nftData, loading, mobileData, contract, cardName, vaultId,
  // })
  const { contract:nftc } = useContract("0x1604Be4764993e1d9aD37358a918C910B4D37096");
 
- const uri = async(tokenId) => {
-  const { data, isLoading } = useContractRead(nftc, "tokenURI", tokenId)
-  console.log(data)
- }
 
 
   if (loading) {
