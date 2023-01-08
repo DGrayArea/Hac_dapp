@@ -1,33 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-family: 'Roboto Slab', serif;
 }
 
 .extra {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Roboto Slab', serif;
 }
 
 @layer components {
     .stats {
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Roboto Slab', serif;;
         @apply bg-[#24170c] text-white p-4 flex-1 rounded-md border-[#F5A524] border-2
     }
 
     .stats-container {
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Roboto Slab', serif;;
         @apply bg-[#24170c] p-5 rounded-lg border-[#F5A524] border
     }
 
     .countdown {
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Roboto Slab', serif;;
         @apply p-8 text-3xl text-center text-white rounded-lg lg:min-w-[150px] bg-[#24170c]
     }
 
     .countdown-label {
-      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: 'Roboto Slab', serif;;
         @apply text-center text-white uppercase text-sm pt-4
     }
 
