@@ -1,0 +1,647 @@
+[
+  {
+    "type": "constructor",
+    "name": "",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_v1Vault",
+        "internalType": "contract IHacStakingVaultV1"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "MultiStake",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "vaultId",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256[]",
+        "name": "tokenIds",
+        "indexed": true,
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "MultiUnstake",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "vaultId",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256[]",
+        "name": "tokenIds",
+        "indexed": true,
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "NFTRecovered",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "token",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "type": "uint256[]",
+        "name": "tokenId",
+        "indexed": true,
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "NewVault",
+    "inputs": [
+      {
+        "type": "tuple",
+        "name": "_vaultInfo",
+        "components": [
+          {
+            "type": "address",
+            "name": "nft",
+            "internalType": "contract IERC721"
+          },
+          {
+            "type": "address",
+            "name": "token",
+            "internalType": "contract RewardsToken"
+          },
+          {
+            "type": "string",
+            "name": "name",
+            "internalType": "string"
+          }
+        ],
+        "indexed": true,
+        "internalType": "struct HacStakingVaultV2.vault"
+      },
+      {
+        "type": "uint256",
+        "name": "time",
+        "indexed": true,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "OwnershipTransferred",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "previousOwner",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "type": "address",
+        "name": "newOwner",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RewardsClaimed",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "vaultId",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "amount",
+        "indexed": true,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TokenRecoverd",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "token",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "amount",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "function",
+    "name": "V1Vault",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "contract IHacStakingVaultV1"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "VaultInfo",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "nft",
+        "internalType": "contract IERC721"
+      },
+      {
+        "type": "address",
+        "name": "token",
+        "internalType": "contract RewardsToken"
+      },
+      {
+        "type": "string",
+        "name": "name",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "active",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "addVault",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_nft",
+        "internalType": "contract IERC721"
+      },
+      {
+        "type": "address",
+        "name": "_token",
+        "internalType": "contract RewardsToken"
+      },
+      {
+        "type": "string",
+        "name": "_name",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "changeV1Vault",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_newV1Vault",
+        "internalType": "contract IHacStakingVaultV1"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "claimForVault",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "_staker",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_tokenIds",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getStakedTokens",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "components": [
+          {
+            "type": "address",
+            "name": "staker",
+            "internalType": "address"
+          },
+          {
+            "type": "uint256",
+            "name": "tokenId",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct HacStakingVaultV2.StakedToken[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserDailyEarning",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserEarnedRewards",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_staker",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "onERC721Received",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      },
+      {
+        "type": "address",
+        "name": "from",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      },
+      {
+        "type": "bytes",
+        "name": "",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bytes4",
+        "name": "",
+        "internalType": "bytes4"
+      }
+    ],
+    "stateMutability": "pure"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "recoverNFT",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_token",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "recoverToken",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_token",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_tokenIds",
+        "internalType": "uint256[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "renounceOwnership",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "rewardR",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_tokenId",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "rate",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setActiveState",
+    "inputs": [
+      {
+        "type": "bool",
+        "name": "_state",
+        "internalType": "bool"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "stake",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_tokenIds",
+        "internalType": "uint256[]"
+      },
+      {
+        "type": "address",
+        "name": "_staker",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "stakedTokensTimestamp",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "stakerAddress",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "stakerInfo",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "amountStaked",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "tRarity",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_tokenId",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "rarity",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "transferOwnership",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "newOwner",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "unStake",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_vaultId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_tokenIds",
+        "internalType": "uint256[]"
+      },
+      {
+        "type": "address",
+        "name": "_staker",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  }
+]
