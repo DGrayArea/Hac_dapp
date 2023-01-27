@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+font-family: 'Nunito', sans-serif;
+}
+
+.extra {
+  font-family: 'Nunito', sans-serif;
+}
+
+@layer components {
+    .stats {
+      font-family: 'Nunito', sans-serif;;
+        @apply bg-[#24170c] text-white p-4 flex-1 rounded-md border-[#F5A524] border-2
+    }
+
+    .token-stats {
+      font-family: 'Nunito', sans-serif;;
+        @apply bg-[#24170c] text-white p-4 rounded-md border-[#F5A524] border-2 min-w-[80px] md:min-h-[120px] md:min-w-[250px]
+    }
+
+    .stats-container {
+      font-family: 'Nunito', sans-serif;;
+        @apply bg-[#24170c] p-5 rounded-lg border-[#F5A524] border
+    }
+
+    .countdown {
+      font-family: 'Nunito', sans-serif;;
+        @apply p-8 max-w-[90px] text-xl lg:text-3xl flex justify-center items-center text-center text-white rounded-lg lg:min-w-[150px] bg-[#24170c] border-[#F5A524] border
+    }
+
+    .countdown-label {
+      font-family: 'Nunito', sans-serif;;
+        @apply text-center text-white uppercase flex text-sm pt-4 justify-center items-center
+    }
+
+    .admin-button {
+        @apply bg-[#24170c] text-white p-2 flex-1 rounded-md border-[#F5A524] border-2 hover:bg-[#F5A524]/50
+    }
+    .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      
+      .dropdown .dropbtn {
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      
+      .navbar a:hover, .dropdown:hover .dropbtn {
+        
+        @apply hover:bg-white/40
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        float: none;
+        color: #F5A524;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+
+        @apply hover:bg-white/40
+      }
+
+      .a-hover:hover {
+
+        @apply bg-white/40
+      }
+      
+      .dropdown-content a:hover {
+        
+        @apply hover:bg-white/40
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+}
